@@ -1,57 +1,61 @@
 
-/*const kilometriViaggio = parseInt(prompt("Inserire lunghezza tragitto"));
+const inputName = document.querySelector('.inputName');
+const inputDistance = document.querySelector(`.inputDistance`);
+const inputAge = document.querySelector(`.inputAge`);
+const costoKm = 0.21;
 
-console.log(kilometriViaggio);
-
-const etaPasseggero = parseInt(prompt("Scrivere la propria età"));
-
-console.log(etaPasseggero);*/
-
+let costoViaggio;
+let scontoInput;
+let scontoPrice;
 let passengerID;
 let travelDistance;
-const costoKm = 0.21;
-let costoViaggio = 1;
-let etaPasseggero;
+let passengerAge;
 
-function getID() {
-    const inputValue = document.getElementById('nameSurnamePassenger').value;
-    passengerID = inputValue;
-    console.log(passengerID);
-}
+const btnPrint = document.querySelector(`.btnPrint`);
+const btnAnnulla = document.querySelector(`.btnAnnulla`);
 
-function getDistance() {
-    const inputValue = document.getElementById('travelDistance').value;
-    travelDistance = inputValue;
-    console.log(travelDistance);
-}
+btnPrint.addEventListener('click',function() {
+    
+    console.log(inputName.value);
+    console.log(inputDistance.value);
 
-function youngPassengerF() {
-    etaPasseggero = 1;
-}
+    passengerID = inputName.value;
+    travelDistance = parseInt(inputDistance.value);
+    
+    scontoInput = inputAge.value;
 
-function averagePassengerF() {
-    etaPasseggero = 2;
-}
+    if (scontoInput.value == "minor") {
+        scontoPrice = 0.80;
+    } else if 
+        (scontoInput.value == "middleAged") {
+        scontoPrice = 1;
+    } else {
+        scontoPrice = 0.60;
+    }
 
-function oldPassengerF() {
-    etaPasseggero = 3;
-}
+    costoViaggio = travelDistance * scontoPrice * costoKm;
 
-if (etaPasseggero == 1) {
-    costoViaggio = kilometriViaggio * 0.21 * 0.80;
-} 
-else if (etaPasseggero == 2) {
-    costoViaggio = kilometriViaggio * 0.21;
-}
-else if(etaPasseggero == 3) {
-    costoViaggio = kilometriViaggio * 0.21 * 0.60;
-}
+    if (Number.isNaN(costoViaggio)) {
+        alert("Errore, selezionare età");
+    }
 
-if (Number.isNaN(costoViaggio)) {
-    alert("Errore con l'inserimento dei dati");
-}
+    const costoViaggioFixed = costoViaggio.toFixed(2);
 
-const costoViaggioFixed = costoViaggio.toFixed(2);
+    console.log(costoViaggioFixed);
+    /*CALCOLATO COSTO VIAGGIO*/
 
-console.log(costoViaggioFixed)
-/*CALCOLATO COSTO VIAGGIO*/
+    document.getElementById('passengerIDPrint').innerHTML = 
+    `<h5> ${passengerID} <h5> `;
+
+    document.getElementById(`costoViaggioPrint`).innerHTML =
+    `${costoViaggioFixed}&#8364`;
+
+})
+
+btnAnnulla.addEventListener('click',function(){
+
+    inputDistance.value = '';
+    inputAge.value = '';
+    inputName.value = '';
+
+})

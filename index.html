@@ -18,30 +18,24 @@
                 
                 <div class="col-3 mb-3">
                     <label for="nameSurnamePassenger" class="form-label fw-bold ">Nome e Cognome</label>
-                    <textarea class="form-control" id="nameSurnamePassenger" placeholder="Inserire nome e cognome" rows="1"></textarea>
-                    <button type="button" class="btn btn-light m-1 " onclick="getID()"> Conferma </button>
+                    <textarea class="form-control inputName"  placeholder="Inserire nome e cognome" rows="1"></textarea>
                 </div>
                 <div class="col-3 offset-1 mb-3"> <!--OFFSET NOT WORKING-->
                     <label for="travelDistance" class="form-label fw-bold ">Distanza viaggio</label>
-                    <textarea class="form-control" id="travelDistance" placeholder="Inserire lunghezza del tragitto" rows="1"></textarea>
-                    <button type="button" class="btn btn-light m-1" onclick="getDistance()"> Conferma </button>
+                    <textarea class="form-control inputDistance" placeholder="Inserire lunghezza del tragitto" rows="1"></textarea>
                 </div>
                 <div class="col-3 offset-1 mb-3">
                     <label for="passengerAge" class="form-label fw-bold ">Età del passeggero</label>
-                    <div class="dropdown">
-                        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Età passeggero
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                          <li><a class="dropdown-item" id="youngPassenger" onclick="youngPassengerF()" href="#"> Minore di 18 anni</a></li>
-                          <li><a class="dropdown-item" id="averagePassenger" onclick="averagePassengerF()" href="#">18-64</a></li>
-                          <li><a class="dropdown-item" id="oldPassenger" onclick="oldPassengerF()" href="#">65 o più</a></li>
-                        </ul>
-                      </div>
+                    <select class="form-select inputAge" id="ageSelect">
+                        <option selected> Età passeggero </option>
+                        <option value="minor">Minorenne</option>
+                        <option value="middleAged">18-65</option>
+                        <option value="old">65 o più</option>
+                    </select>
                 </div>
-                <div class="col-12 d-flex justify-content-center">
-                    <button type="button" class="btn btn-success m-1 fw-bold ">Generare ticket di viaggio</button>
-                    <button type="button" class="btn btn-danger m-1 fw-bold ">Annulla</button>
+                <div class="col-12 d-flex justify-content-center"> 
+                    <button type="button" class="btnPrint btn btn-success m-1 fw-bold ">Generare ticket di viaggio</button>
+                    <button type="button" class="btnAnnulla btn btn-danger m-1 fw-bold ">Annulla</button>
                 </div>
         </div>
     </div>
@@ -53,7 +47,7 @@
             
             <div class="m-1">
                 <h3 class="fw-bold text-nowrap ">Titolare di viaggio</h3>
-                <h5>Inserire variabile nome cognome</h5>
+                <div id="passengerIDPrint"></div>
             </div>
             
             <div class="row w-100 d-flex m-1  ">
@@ -61,8 +55,8 @@
                 <div class="col-6 d-flex flex-column ">
                     <h5 class="fw-bold "> Classe di viaggio </h5>
                     <p> Prima classe </p>
-                    <h5 class="fw-bold "> Costo biglietto </h5>
-                    <!--inserire var costoviaggio-->
+                    <h5 class="fw-bold"> Costo biglietto </h5>
+                    <p id="costoViaggioPrint"></p>
                 </div>
                 <div class="col-6 d-flex flex-column">
                     <h5 class="fw-bold "> ID treno </h5>
