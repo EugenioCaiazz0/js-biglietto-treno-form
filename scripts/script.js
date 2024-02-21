@@ -18,11 +18,20 @@ else if (etaPasseggero > 65) {
     costoViaggio = kilometriViaggio * 0.21 * 0.60;
 }
 else {
-    costoViaggio = kilometriViaggio * 0.21
+    costoViaggio = kilometriViaggio * 0.21;
 }
 
-console.log(costoViaggio);
+if (Number.isNaN(costoViaggio)) {
+    alert("Errore con l'inserimento dei dati");
+}
 
 /*CALCOLATO COSTO VIAGGIO*/
 
 const costoViaggioFixed = costoViaggio.toFixed(2);
+
+
+const btn1 = document.querySelector('.btn1');
+
+btn1.addEventListener('click',function(){
+    console.log(costoViaggio);
+  })

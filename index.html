@@ -13,8 +13,58 @@
 
 <body>
 
+    <div class="container d-flex justify-content-center debug">
+        <div class="row w-100" id="pricing-section">
+                
+                <div class="col-3 mb-3">
+                    <label for="nameSurnamePassenger" class="form-label fw-bold ">Nome e Cognome</label>
+                    <textarea class="form-control" id="nameSurnamePassenger" placeholder="Inserire nome e cognome" rows="1"></textarea>
+                </div>
+                <div class="col-3 offset-1 mb-3"> <!--OFFSET NOT WORKING-->
+                    <label for="travelDistance" class="form-label fw-bold ">Distanza viaggio</label>
+                    <textarea class="form-control" id="travelDistance" placeholder="Inserire lunghezza del tragitto" rows="1"></textarea>
+                </div>
+                <div class="col-3 offset-1 mb-3">
+                    <label for="passengerAge" class="form-label fw-bold ">Età del passeggero</label>
+                    <textarea class="form-control" id="travelDistance" placeholder="Inserire lungheza del tragitto" rows="1"></textarea>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <button type="button" class="btn btn-success m-1 fw-bold ">Generare ticket di viaggio</button>
+                    <button type="button" class="btn btn-danger m-1 fw-bold ">Annulla</button>
+                </div>
+        </div>
+    </div>
+
+    <div class="container d-flex flex-column  debug">
+        
+        <h2 class="m-1 fw-bold align-self-center "> Dettagli ticket</h2>
+        <div class="container d-flex debug">
+            
+            <div>
+                <h3 class="fw-bold ">Titolare di viaggio</h3>
+                <h5>Inserire variabile nomecognome</h5>
+            </div>
+            
+            <div class="row w-100 d-flex  ">
+                <h3 class="fw-bold ">Info di viaggio</h3>
+                <div class="col-6 d-flex flex-column ">
+                    <h5 class="fw-bold "> Classe di viaggio </h5>
+                    <p> Prima classe </p>
+                    <h5 class="fw-bold "> Costo biglietto </h5>
+                    <!--inserire var costoviaggio-->
+                </div>
+                <div class="col-6 d-flex flex-column">
+                    <h5 class="fw-bold "> ID treno </h5>
+                    <p> 682ap87s</p>
+                    <h5 class="fw-bold "> Carrozza </h5>
+                    <p> 5 </p>
+                </div>
+            </div>
+        
+        </div>
+
+    </div>
     
-    
-    <script src="scripts/script.js"></script>
+  <!--  <script src="scripts/script.js"></script> -->
 </body>
 </html>
