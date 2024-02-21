@@ -19,14 +19,25 @@
                 <div class="col-3 mb-3">
                     <label for="nameSurnamePassenger" class="form-label fw-bold ">Nome e Cognome</label>
                     <textarea class="form-control" id="nameSurnamePassenger" placeholder="Inserire nome e cognome" rows="1"></textarea>
+                    <button type="button" class="btn btn-light m-1 " onclick="getID()"> Conferma </button>
                 </div>
                 <div class="col-3 offset-1 mb-3"> <!--OFFSET NOT WORKING-->
                     <label for="travelDistance" class="form-label fw-bold ">Distanza viaggio</label>
                     <textarea class="form-control" id="travelDistance" placeholder="Inserire lunghezza del tragitto" rows="1"></textarea>
+                    <button type="button" class="btn btn-light m-1" onclick="getDistance()"> Conferma </button>
                 </div>
                 <div class="col-3 offset-1 mb-3">
                     <label for="passengerAge" class="form-label fw-bold ">Età del passeggero</label>
-                    <textarea class="form-control" id="travelDistance" placeholder="Inserire lungheza del tragitto" rows="1"></textarea>
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Età passeggero
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" id="youngPassenger" onclick="youngPassengerF()" href="#"> Minore di 18 anni</a></li>
+                          <li><a class="dropdown-item" id="averagePassenger" onclick="averagePassengerF()" href="#">18-64</a></li>
+                          <li><a class="dropdown-item" id="oldPassenger" onclick="oldPassengerF()" href="#">65 o più</a></li>
+                        </ul>
+                      </div>
                 </div>
                 <div class="col-12 d-flex justify-content-center">
                     <button type="button" class="btn btn-success m-1 fw-bold ">Generare ticket di viaggio</button>
@@ -40,12 +51,12 @@
         <h2 class="m-1 fw-bold align-self-center "> Dettagli ticket</h2>
         <div class="container d-flex debug">
             
-            <div>
-                <h3 class="fw-bold ">Titolare di viaggio</h3>
-                <h5>Inserire variabile nomecognome</h5>
+            <div class="m-1">
+                <h3 class="fw-bold text-nowrap ">Titolare di viaggio</h3>
+                <h5>Inserire variabile nome cognome</h5>
             </div>
             
-            <div class="row w-100 d-flex  ">
+            <div class="row w-100 d-flex m-1  ">
                 <h3 class="fw-bold ">Info di viaggio</h3>
                 <div class="col-6 d-flex flex-column ">
                     <h5 class="fw-bold "> Classe di viaggio </h5>
@@ -65,6 +76,6 @@
 
     </div>
     
-  <!--  <script src="scripts/script.js"></script> -->
+ <script src="scripts/script.js"></script> 
 </body>
 </html>
